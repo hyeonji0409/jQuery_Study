@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript</title>
+    <style>
+        #parent {border: solid 1px blue;}
+        #child {border: solid 1px red; width: 20%;}
+    </style>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            // child 영역 제외한 paretn 클릭 -> parent만 발생
+            $('#parent').on('click', function(){
+                alert("paretn");
+            });
+
+            // 현재 child 클릭 -> child/parent 2개 이벤트 발생
+            $('#child').on('click', function(e){
+                e.stopPropagation();
+                alert("child");
+            })
+        });
+
+    </script>
+</head>
+<body>
+    <div id="parent">
+        <div id="child">클릭</div>
+    </div>
+</body>
+</html>

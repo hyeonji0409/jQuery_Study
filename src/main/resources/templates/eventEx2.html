@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript</title>
+    <style type="text/css">
+        button {
+            background-color: red;
+            color: white;
+            width: 100px;
+            height: 50px;
+            border-radius: 10px;
+            font-size: 20px;
+        }
+    </style>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            var color = ['green', 'blue', 'red'];
+            var num = 0;
+
+            $(document).on('click', '#btn', function(){
+                $(this).css('background', color[num++]);
+                if(num==3) num=0;
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <button id="btn">클릭</button>
+</body>
+</html>

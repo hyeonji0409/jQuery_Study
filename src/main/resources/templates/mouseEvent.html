@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            // 버튼 클릭했을 때
+            $('#btn').on('click', function(){
+                alert("클릭했습니다.");
+            });
+
+            // 2개의 이벤트 처리
+            // 방법 1
+           /* $('#btn')
+                .on('mouseover', function(){
+                    $(this).css('background', 'yellow');
+                })
+                .on('mouseout', function(){
+                    $(this).css('background', "");
+                }); // button on 종료 */
+
+            // 방법2
+            $('#btn').on({
+                mouseover:function(){
+                    $(this).css('background', 'pink');
+                },
+                mouseout:function() {
+                    $(this).css('background', 'skyblue');
+                }
+            });
+
+        });
+
+    </script>
+</head>
+<body>
+    <input type="button" value="클릭하세요" id="btn">
+</body>
+</html>

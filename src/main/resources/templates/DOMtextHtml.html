@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            // 1. text() : 문자열만 반환 (태그 제외)
+            var aText = $('#a').text(); // 괄호 안에 인자 없으면 get()의 의미
+            alert("text: " + aText); // A
+
+            // 2. html() : 
+            var bHtml = $('#b').html();
+            alert('html: ' + bHtml); // <h3>B</h3>
+
+            // 3, text(문자열) : <h1>을 태그로 인식하지 못하고 문자열로 취급
+            $('#a').text('<h1>jQuery</h1>'); // 괄호 안에 값이 있으면 set의 의미
+            // 4. html(문자열) : <h1> 을 태그로 인식해 값만 출력
+            $('#b').html('<h1>jQuery</h1>');
+        });
+
+    </script>
+</head>
+<body>
+    <div id="a"><h3>A</h3></div>
+    <div id="b"><h3>B</h3></div>
+</body>
+</html>
