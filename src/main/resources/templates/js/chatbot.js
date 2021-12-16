@@ -1,33 +1,26 @@
-/* chatbot.js */
-
-$(document).ready(function(){
-
-    // 챗봇에게 질문하고 응답받기
-    // message 입력하고 전송버튼 눌렀을 때
+$(document).ready(function() {
     $('#chatForm').on('submit', function(){
         event.preventDefault();
-
-        // message 입력하고 [전송] 누르면 chatBox에 보낸 메시지 추가하기
-        if($('#message').val() != "") {
-            $('#chatBox').append('<div class="msgBox send"><span>'
-                                + $('#message').val() + '</span></div><br>');
+        // message 입력하고 [전송] 버튼 누르면 (엔터쳐도 됨)
+        // chatBox에 보낸 메시지 추가
+        if($('#message').val() != ""){
+            $('#chatBox').append('<div><div class="msgBox send">' +
+                                                $('#message').val() + '</div></div><br>');
         }
 
-        $('#message').val('');
+        $("#message").val('')
 
-        // 응답 받는 함수 호출
         getResponse();
-    }); // charForm submit
 
-    // 서버로부터 받는 메시지(가정)
+    });
+
     function getResponse() {
-        var result = "저는 챗봇입니다.";
+        let result = "저는 챗봇입니다.안녕하세요 질문을 길게 하고 있습니다. 어떻게 출력되나요안녕하세요 질문을 길게 하고 있습니다. 어떻게 출력되나요안녕하세요 질문을 길게 하고 있습니다. 어떻게 출력되나요안녕하세요 질문을 길게 하고 있습니다. 어떻게 출력되나요"
 
-        $('#chatBox').append('<div class="msgBox receive"><br>챗봇<br><span>'
-        + result + '</span></div><br>');
+        $('#chatBox').append('챗봇<br><div><div class="msgBox receive">' +
+                                result + '</div></div><br>');
 
-        // 스크롤 해서 올리기
-        $('chatBox').scrollTop($('#chatBox').prop("scrollHegiht"));
+        $("#chatBox").scrollTop($("#chatBox").prop("scrollHeight"));
     }
 
-}); // ready 종료
+});
