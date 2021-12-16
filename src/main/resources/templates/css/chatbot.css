@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+#wrap {
+    margin: 0 auto;
+    width: 500px;
+    height: 800px;
+}
+
+#chatBotHeader {
+    padding: 10px 15px;
+    border-bottom: 2px solid blue;
+}
+#closeBtn{ border: none; background-color: none; float: right;}
+
+#chatBox {
+    width: 500px;
+    height: 600px;
+    overflow-y: scroll;
+    padding: 10px 15px;
+    background: #9bbbd4;
+}
+
+#message { width: 440px; height: 30px;}
+
+#submitBtn {
+    float: right;
+    padding-right: 0;
+   /* width: 50px;
+    height: 30px;
+    background: #eeeeee; */
+}
+
+.msgBox {
+    height: 20px;
+}
+
+.msgBox > span {
+    padding: 3px 5px;
+    word-break: break-all;
+    display: block;
+    max-width: 300px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.msgBox.send > span {
+    background: #fef01b;
+    float: right;  
+}
+
+.msgBox.receive > span {
+    background: white;
+    float: left;
+}
+
